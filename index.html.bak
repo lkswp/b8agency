@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B8 | Agência de Marketing Audiovisual & Performance</title>
+  <meta name="description" content="Transformamos atenção em faturamento absoluto. Unimos estratégia digital, edição cinética de alto impacto, tráfego pago focado em ROI e branding estratégico para posicionar sua marca no topo.">
+  <meta name="keywords" content="marketing digital, edição cinética, tráfego pago, posicionamento de marca, marketing imobiliário, agência B8, audiovisual, conversão, ROI">
+  <meta name="author" content="Agência B8">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://b8audiovisual.com.br/">
+  <meta property="og:title" content="B8 | Agência de Marketing Audiovisual & Performance">
+  <meta property="og:description" content="Transformamos atenção em faturamento absoluto. Estratégia, edição cinética de alto impacto e tráfego focado em conversão.">
+  <meta property="og:image" content="https://b8audiovisual.com.br/assets/og-image.jpg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================================
+       DESIGN SYSTEM & VARIABLES
+       ========================================================================== */
+    :root {
+      --bg-dark: #0A0A0B;
+      --bg-card: #121214;
+      --bg-card-hover: rgba(42, 58, 73, 0.15);
+      --color-brand-slate: #2A3A49;
+      --color-brand-blue: #1D84DC;
+      --color-brand-offwhite: #F9F9F9;
+      --color-brand-softgray: #E5E9EC;
+      --color-text-muted: #8E9CA8;
+      
+      --font-primary: 'Montserrat', sans-serif;
+      --font-secondary: 'Inter', sans-serif;
+      
+      --border-thin: 1px solid rgba(255, 255, 255, 0.08);
+      --border-brand: 1px solid rgba(29, 132, 220, 0.3);
+      --border-glow: 0 0 20px rgba(29, 132, 220, 0.15);
+      
+      --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      --transition-fast: all 0.2s ease;
+    }
+
+    /* ==========================================================================
+       RESET & BASE STYLES
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+      background-color: var(--bg-dark);
+      color: var(--color-brand-offwhite);
+      overflow-x: hidden;
+    }
+
+    body {
+      font-family: var(--font-secondary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Ambient background glowing circles */
+    body::before, body::after {
+      content: '';
+      position: absolute;
+      width: 40vw;
+      height: 40vw;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(29, 132, 220, 0.08) 0%, rgba(10, 10, 11, 0) 70%);
+      pointer-events: none;
+      z-index: -1;
+      will-change: transform;
+    }
+
+    body::before {
+      top: 5%;
+      right: -10%;
+      animation: floatGlow 20s infinite ease-in-out alternate;
+    }
+
+    body::after {
+      top: 55%;
+      left: -10%;
+      background: radial-gradient(circle, rgba(42, 58, 73, 0.12) 0%, rgba(10, 10, 11, 0) 70%);
+      animation: floatGlow 25s infinite ease-in-out alternate-reverse;
+    }
+
+    @keyframes floatGlow {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(-5%, 5%) scale(1.1); }
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-primary);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+
+    img, svg {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button, input, textarea, select {
+      font-family: inherit;
+      background: none;
+      border: none;
+      color: inherit;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-dark);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--color-brand-slate);
+      border-radius: 4px;
+      border: 2px solid var(--bg-dark);
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--color-brand-blue);
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Button Utilities */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 28px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition-smooth);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--color-brand-blue) 0%, #1765a8 100%);
+      color: var(--color-brand-offwhite);
+      box-shadow: 0 4px 15px rgba(29, 132, 220, 0.3);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(29, 132, 220, 0.45);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--color-brand-slate);
+      color: var(--color-brand-softgray);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--color-brand-blue);
+      background: rgba(29, 132, 220, 0.05);
+      color: var(--color-brand-offwhite);
+      transform: translateY(-2px);
+    }
+
+    /* Section Utilities */
+    section {
+      padding: 100px 0;
+      position: relative;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-badge {
+      display: inline-block;
+      font-family: var(--font-secondary);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+      color: var(--color-brand-blue);
+      background: rgba(29, 132, 220, 0.08);
+      padding: 6px 16px;
+      border-radius: 100px;
+      border: 1px solid rgba(29, 132, 220, 0.2);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-size: clamp(2rem, 3.5vw, 2.75rem);
+      color: var(--color-brand-offwhite);
+      margin-bottom: 16px;
+    }
+
+    .section-subtitle {
+      font-size: clamp(1rem, 1.2vw, 1.15rem);
+      color: var(--color-brand-softgray);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    /* Scroll Animation Base */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================================================
+       1. NAVBAR
+       ========================================================================== */
+    .header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+      transition: var(--transition-smooth);
+    }
+
+    .header.scrolled {
+      background: rgba(10, 10, 11, 0.75);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 80px;
+      transition: var(--transition-smooth);
+    }
+
+    .header.scrolled .nav-container {
+      height: 70px;
+    }
+
+    /* Logo Styling */
+    .logo-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-svg {
+      width: 44px;
+      height: 38px;
+      color: var(--color-brand-offwhite);
+    }
+
+    .logo-text {
+      font-family: var(--font-primary);
+      font-weight: 900;
+      font-size: 1.5rem;
+      letter-spacing: -0.03em;
+      display: flex;
+      align-items: center;
+      color: var(--color-brand-offwhite);
+    }
+
+    .logo-text span {
+      font-weight: 300;
+      font-size: 0.9rem;
+      letter-spacing: 0.15em;
+      margin-left: 8px;
+      padding-left: 8px;
+      border-left: 1px solid rgba(255, 255, 255, 0.2);
+      color: var(--color-brand-softgray);
+      text-transform: uppercase;
+    }
+
+    /* Nav Menu */
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-brand-softgray);
+      position: relative;
+      padding: 8px 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--color-brand-blue);
+      transition: var(--transition-smooth);
+    }
+
+    .nav-link:hover {
+      color: var(--color-brand-offwhite);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      display: flex;
+    }
+
+    /* Mobile Menu Toggle */
+    .mobile-toggle {
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30px;
+      height: 20px;
+      cursor: pointer;
+      z-index: 1001;
+    }
+
+    .mobile-toggle span {
+      display: block;
+      width: 100%;
+      height: 2px;
+      background-color: var(--color-brand-offwhite);
+      transition: var(--transition-fast);
+    }
+
+    .mobile-toggle.active span:nth-child(1) {
+      transform: translateY(9px) rotate(45deg);
+    }
+
+    .mobile-toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .mobile-toggle.active span:nth-child(3) {
+      transform: translateY(-9px) rotate(-45deg);
+    }
+
+    /* ==========================================================================
+       2. HERO SECTION
+       ========================================================================== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 120px;
+      padding-bottom: 60px;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero-headline {
+      font-size: clamp(2.5rem, 5.5vw, 4.5rem);
+      line-height: 1.1;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, var(--color-brand-offwhite) 40%, var(--color-brand-softgray) 70%, var(--color-brand-blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: heroFadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+
+    .hero-subheadline {
+      font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+      color: var(--color-brand-softgray);
+      margin-bottom: 40px;
+      line-height: 1.5;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: heroFadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s forwards;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: heroFadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+    }
+
+    @keyframes heroFadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ==========================================================================
+       3. SERVICES SECTION (SPOTLIGHT GRID)
+       ========================================================================== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 24px;
+      margin-top: 20px;
+    }
+
+    .service-card {
+      background-color: var(--bg-card);
+      border: var(--border-thin);
+      border-radius: 16px;
+      padding: 40px 32px;
+      position: relative;
+      overflow: hidden;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    /* Spotlight Background Effect */
+    .service-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(
+        350px circle at var(--mouse-x, 0) var(--mouse-y, 0),
+        rgba(29, 132, 220, 0.12),
+        transparent 80%
+      );
+      opacity: 0;
+      transition: opacity 0.5s ease;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      border-color: rgba(29, 132, 220, 0.25);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), var(--border-glow);
+    }
+
+    .service-icon-box {
+      width: 56px;
+      height: 56px;
+      border-radius: 12px;
+      background: rgba(29, 132, 220, 0.08);
+      border: 1px solid rgba(29, 132, 220, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 28px;
+      color: var(--color-brand-blue);
+      position: relative;
+      z-index: 2;
+      transition: var(--transition-smooth);
+    }
+
+    .service-card:hover .service-icon-box {
+      background: var(--color-brand-blue);
+      color: var(--color-brand-offwhite);
+      transform: scale(1.05);
+    }
+
+    .service-icon-box svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .service-title {
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      color: var(--color-brand-offwhite);
+      position: relative;
+      z-index: 2;
+    }
+
+    .service-desc {
+      font-size: 0.95rem;
+      color: var(--color-brand-softgray);
+      line-height: 1.6;
+      position: relative;
+      z-index: 2;
+      flex-grow: 1;
+    }
+
+    /* ==========================================================================
+       4. PORTFOLIO SECTION
+       ========================================================================== */
+    .portfolio-filters {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 10px 24px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+      color: var(--color-brand-softgray);
+      transition: var(--transition-fast);
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--color-brand-blue);
+      color: var(--color-brand-offwhite);
+      border-color: var(--color-brand-blue);
+      box-shadow: 0 4px 12px rgba(29, 132, 220, 0.2);
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .portfolio-card {
+      background-color: var(--bg-card);
+      border-radius: 16px;
+      overflow: hidden;
+      border: var(--border-thin);
+      position: relative;
+      transition: var(--transition-smooth);
+      display: flex;
+      flex-direction: column;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .portfolio-card.hidden {
+      display: none;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(29, 132, 220, 0.25);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .portfolio-media {
+      width: 100%;
+      height: 220px;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #131c24 0%, #223241 100%);
+    }
+
+    /* Abstract cinematic grid gradients representing media thumbnail placeholders */
+    .portfolio-media::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(10, 10, 11, 0) 0%, rgba(10, 10, 11, 0.6) 80%, rgba(18, 18, 20, 0.95) 100%);
+      z-index: 1;
+    }
+
+    /* Cinematic placeholder visuals inside media */
+    .portfolio-visual {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: radial-gradient(circle at center, rgba(29, 132, 220, 0.2) 0%, transparent 70%);
+      transition: var(--transition-smooth);
+    }
+
+    .portfolio-card:hover .portfolio-visual {
+      transform: scale(1.1);
+      background: radial-gradient(circle at center, rgba(29, 132, 220, 0.35) 0%, transparent 60%);
+    }
+
+    .portfolio-badge {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      z-index: 3;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--color-brand-offwhite);
+      background: rgba(29, 132, 220, 0.85);
+      backdrop-filter: blur(4px);
+      padding: 6px 14px;
+      border-radius: 100px;
+      letter-spacing: 0.05em;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Distinct badge colors per target */
+    .badge-viral { background: rgba(235, 94, 40, 0.9); }
+    .badge-sales { background: rgba(40, 167, 69, 0.9); }
+    .badge-star { background: rgba(29, 132, 220, 0.9); }
+
+    .portfolio-info {
+      padding: 24px;
+      position: relative;
+      z-index: 2;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .portfolio-category {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--color-brand-blue);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 8px;
+    }
+
+    .portfolio-name {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+      color: var(--color-brand-offwhite);
+    }
+
+    .portfolio-desc {
+      font-size: 0.9rem;
+      color: var(--color-brand-softgray);
+      flex-grow: 1;
+      margin-bottom: 16px;
+    }
+
+    .portfolio-link {
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--color-brand-offwhite);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      align-self: flex-start;
+      margin-top: auto;
+    }
+
+    .portfolio-link svg {
+      width: 16px;
+      height: 16px;
+      transition: transform 0.2s ease;
+    }
+
+    .portfolio-card:hover .portfolio-link svg {
+      transform: translateX(4px);
+    }
+
+    /* ==========================================================================
+       5. SOCIAL PROOF & METRICS SECTION
+       ========================================================================== */
+    .metrics {
+      background-color: var(--bg-card);
+      border-top: var(--border-thin);
+      border-bottom: var(--border-thin);
+      position: relative;
+      z-index: 2;
+    }
+
+    .metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 40px;
+      text-align: center;
+    }
+
+    .metric-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .metric-number {
+      font-family: var(--font-primary);
+      font-size: clamp(2.5rem, 4vw, 3.5rem);
+      font-weight: 900;
+      color: var(--color-brand-offwhite);
+      margin-bottom: 8px;
+      line-height: 1;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, var(--color-brand-offwhite) 50%, var(--color-brand-blue) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .metric-label {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--color-brand-softgray);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ==========================================================================
+       6. LEAD CAPTURE FORM
+       ========================================================================== */
+    .contact {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .contact-info h2 {
+      margin-bottom: 20px;
+      text-align: left;
+    }
+
+    .contact-info p {
+      color: var(--color-brand-softgray);
+      margin-bottom: 40px;
+      font-size: 1.05rem;
+    }
+
+    .contact-methods {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .contact-method {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .contact-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: rgba(29, 132, 220, 0.08);
+      border: 1px solid rgba(29, 132, 220, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-brand-blue);
+    }
+
+    .contact-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .contact-text h4 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--color-brand-offwhite);
+      margin-bottom: 2px;
+    }
+
+    .contact-text p {
+      font-size: 0.9rem;
+      color: var(--color-text-muted);
+      margin: 0;
+    }
+
+    /* Lead Form Styling */
+    .form-container {
+      background: rgba(18, 18, 20, 0.6);
+      backdrop-filter: blur(16px);
+      border: var(--border-thin);
+      border-radius: 20px;
+      padding: 48px;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+
+    .lead-form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .input-group {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    .input-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-brand-softgray);
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .form-control {
+      background: rgba(10, 10, 11, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 8px;
+      padding: 14px 18px;
+      color: var(--color-brand-offwhite);
+      font-size: 0.95rem;
+      transition: var(--transition-fast);
+      width: 100%;
+    }
+
+    .form-control::placeholder {
+      color: rgba(255, 255, 255, 0.25);
+    }
+
+    .form-control:focus {
+      outline: none;
+      border-color: var(--color-brand-blue);
+      box-shadow: 0 0 10px rgba(29, 132, 220, 0.2);
+      background: rgba(10, 10, 11, 0.8);
+    }
+
+    select.form-control {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E5E9EC' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 18px center;
+      background-size: 16px;
+      padding-right: 45px;
+    }
+
+    select.form-control option {
+      background: var(--bg-dark);
+      color: var(--color-brand-offwhite);
+    }
+
+    textarea.form-control {
+      resize: vertical;
+      min-height: 110px;
+    }
+
+    .submit-container {
+      margin-top: 10px;
+      position: relative;
+    }
+
+    .submit-btn {
+      width: 100%;
+      height: 52px;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    /* Form Status Screen Overlay */
+    .form-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-card);
+      border-radius: 20px;
+      z-index: 10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px;
+      text-align: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .form-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .success-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: rgba(40, 167, 69, 0.1);
+      border: 2px solid rgba(40, 167, 69, 0.3);
+      color: #28a745;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 24px;
+      box-shadow: 0 0 20px rgba(40, 167, 69, 0.15);
+    }
+
+    .success-icon svg {
+      width: 40px;
+      height: 40px;
+    }
+
+    .success-title {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+      color: var(--color-brand-offwhite);
+    }
+
+    .success-desc {
+      color: var(--color-brand-softgray);
+      font-size: 0.95rem;
+      max-width: 320px;
+      margin-bottom: 24px;
+    }
+
+    /* Loading Spinner */
+    .spinner {
+      width: 24px;
+      height: 24px;
+      border: 3px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: var(--color-brand-offwhite);
+      animation: spin 1s ease-in-out infinite;
+      display: none;
+    }
+
+    .btn.loading .btn-text {
+      display: none;
+    }
+
+    .btn.loading .spinner {
+      display: block;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* ==========================================================================
+       7. FOOTER
+       ========================================================================== */
+    .footer {
+      background-color: #050506;
+      border-top: var(--border-thin);
+      padding: 60px 0 30px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 16px;
+    }
+
+    .social-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: var(--border-thin);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-brand-softgray);
+      transition: var(--transition-fast);
+    }
+
+    .social-icon:hover {
+      border-color: var(--color-brand-blue);
+      color: var(--color-brand-blue);
+      transform: translateY(-2px);
+      box-shadow: 0 0 12px rgba(29, 132, 220, 0.15);
+    }
+
+    .social-icon svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .footer-divider {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.05);
+      margin-bottom: 30px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-link:hover {
+      color: var(--color-brand-offwhite);
+    }
+
+    /* ==========================================================================
+       RESPONSIVE MEDIA QUERIES
+       ========================================================================== */
+    @media (max-width: 991px) {
+      .contact-wrapper {
+        grid-template-columns: 1fr;
+        gap: 60px;
+      }
+      .contact-info {
+        text-align: center;
+      }
+      .contact-info h2 {
+        text-align: center;
+      }
+      .contact-methods {
+        align-items: center;
+      }
+    }
+
+    @media (max-width: 768px) {
+      section {
+        padding: 80px 0;
+      }
+
+      /* Navbar Hamburger Menu */
+      .mobile-toggle {
+        display: flex;
+      }
+
+      .nav-menu {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 80px);
+        background: rgba(10, 10, 11, 0.98);
+        backdrop-filter: blur(16px);
+        flex-direction: column;
+        justify-content: center;
+        gap: 40px;
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+        z-index: 999;
+        border-top: var(--border-thin);
+      }
+
+      .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .nav-link {
+        font-size: 1.25rem;
+      }
+
+      .nav-cta {
+        display: none; /* Controlled inside hamburger menu if needed, or hidden */
+      }
+
+      /* Hero */
+      .hero {
+        padding-top: 140px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 320px;
+        margin: 0 auto;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      /* Form */
+      .form-container {
+        padding: 32px 24px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      
+      .footer-top {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       1. NAVBAR
+       ========================================================================== */ -->
+  <header class="header" id="header">
+    <div class="container">
+      <div class="nav-container">
+        <a href="#home" class="logo-link" aria-label="B8 Home">
+          <!-- Precise reconstructed B8 Logo Vector Icon in white with Electric Blue Diamond -->
+          <svg class="logo-svg" viewBox="0 0 160 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- 100% transparent composite path of the B8 Logo -->
+            <path fill-rule="evenodd" clip-rule="evenodd" d="
+              M 25,20 H 60 C 72,20 80,28 80,40 C 80,50 74,58 65,62 C 76,66 82,75 82,88 C 82,100 72,110 60,110 H 25 Z
+              M 82,40 C 82,28 92,20 104,20 C 116,20 126,28 126,40 C 126,50 120,58 111,62 C 120,66 126,75 126,88 C 126,100 116,110 104,110 C 92,110 82,100 82,88 Z
+              M 37,31 V 51 H 55 C 60,51 64,47 64,41 C 64,35 60,31 55,31 Z
+              M 37,75 V 95 H 57 C 62,95 66,91 66,85 C 66,79 62,75 57,75 Z
+              M 104,32 C 99,32 95,36 95,41 C 95,46 99,50 104,50 C 109,50 113,46 113,41 C 113,36 109,32 104,32 Z
+              M 104,76 C 99,76 95,80 95,85 C 95,90 99,94 104,94 C 109,94 113,90 113,85 C 113,80 109,76 104,76 Z
+            " fill="#F9F9F9"/>
+            <path d="M 80,53 Q 80,63 90,63 Q 80,63 80,73 Q 80,63 70,63 Q 80,63 80,53 Z" fill="#1D84DC"/>
+          </svg>
+          <div class="logo-text">B8<span>Audiovisual</span></div>
+        </a>
+
+        <nav aria-label="Navegação Principal">
+          <ul class="nav-menu" id="nav-menu">
+            <li><a href="#home" class="nav-link">Home</a></li>
+            <li><a href="#servicos" class="nav-link">Serviços</a></li>
+            <li><a href="#portfolio" class="nav-link">Portfólio</a></li>
+            <li><a href="#contato" class="nav-link">Contato</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-cta">
+          <a href="#contato" class="btn btn-secondary">Falar com Especialista</a>
+        </div>
+
+        <div class="mobile-toggle" id="mobile-toggle" aria-label="Abrir Menu" aria-expanded="false" aria-controls="nav-menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================================================
+         2. HERO SECTION
+         ========================================================================== */ -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="hero-headline">B8: Transformamos Atenção em Faturamento Absoluto</h1>
+          <p class="hero-subheadline">
+            Unimos estratégia de tráfego ultra-segmentada, produções audiovisuais cinematográficas e posicionamento de marca estratégico de alta conversão. Escalamos sua agência, empresa ou infoproduto.
+          </p>
+          <div class="hero-actions">
+            <a href="#servicos" class="btn btn-primary">Conhecer Soluções</a>
+            <a href="#portfolio" class="btn btn-secondary">Ver Portfólio</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         3. SERVICES / PILARES
+         ========================================================================== */ -->
+    <section class="services reveal" id="servicos">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Nossas Soluções</span>
+          <h2 class="section-title">Como Escalamos Negócios</h2>
+          <p class="section-subtitle">
+            Pilares estratégicos desenvolvidos para capturar a atenção do mercado moderno e reter o público certo até a venda.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <!-- Card 1 -->
+          <div class="service-card" data-spotlight>
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+              </svg>
+            </div>
+            <h3 class="service-title">Conteúdo & Edição Cinética</h3>
+            <p class="service-desc">
+              Audiovisuais dinâmicos focados no primeiro segundo. Usamos técnicas avançadas de retenção visual, ritmo acelerado e storytelling de impacto para virar o jogo da atenção orgânica.
+            </p>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="service-card" data-spotlight>
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
+              </svg>
+            </div>
+            <h3 class="service-title">Tráfego Pago & Performance</h3>
+            <p class="service-desc">
+              Campanhas baseadas estritamente em ROI e análise de dados. Encontramos e atraímos seus compradores ideais nas principais plataformas (Meta, Google e TikTok) de maneira previsível.
+            </p>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="service-card" data-spotlight>
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+              </svg>
+            </div>
+            <h3 class="service-title">Posicionamento & Design</h3>
+            <p class="service-desc">
+              Criação de identidades visuais imponentes e designs estratégicos. Posicionamos sua empresa como referência premium absoluta do seu nicho de atuação no mercado digital.
+            </p>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="service-card" data-spotlight>
+            <div class="service-icon-box">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+            </div>
+            <h3 class="service-title">Marketing Imobiliário Premium</h3>
+            <p class="service-desc">
+              Estratégias sob medida para incorporadoras, construtoras e corretores de luxo. Campanhas segmentadas que geram leads qualificados de alto padrão para lançamentos exclusivos.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         4. PORTFOLIO INTERATIVO
+         ========================================================================== */ -->
+    <section class="portfolio reveal" id="portfolio">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge">Nosso Trabalho</span>
+          <h2 class="section-title">Cases de Sucesso</h2>
+          <p class="section-subtitle">
+            Dê uma olhada nos projetos que geraram atenção em massa e faturamento expressivo para nossos parceiros de negócios.
+          </p>
+        </div>
+
+        <div class="portfolio-filters">
+          <button class="filter-btn active" data-filter="all">Todos</button>
+          <button class="filter-btn" data-filter="videos">Vídeos</button>
+          <button class="filter-btn" data-filter="design">Design</button>
+          <button class="filter-btn" data-filter="estrategia">Estratégia</button>
+        </div>
+
+        <div class="portfolio-grid" id="portfolio-grid">
+          <!-- Case 1 -->
+          <article class="portfolio-card" data-category="videos">
+            <div class="portfolio-media">
+              <div class="portfolio-visual" style="background: radial-gradient(circle at center, rgba(29,132,220,0.2) 0%, transparent 70%);"></div>
+              <span class="portfolio-badge badge-viral">+15M Views</span>
+            </div>
+            <div class="portfolio-info">
+              <span class="portfolio-category">Vídeos</span>
+              <h3 class="portfolio-name">Audiovisual Reel 2026</h3>
+              <p class="portfolio-desc">Edição cinética ultra-rápida e direção criativa para lançamentos digitais de alta escala nacional.</p>
+              <a href="#contato" class="portfolio-link">
+                Conhecer Estratégia
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Case 2 -->
+          <article class="portfolio-card" data-category="estrategia">
+            <div class="portfolio-media">
+              <div class="portfolio-visual" style="background: radial-gradient(circle at center, rgba(42,58,73,0.3) 0%, transparent 70%);"></div>
+              <span class="portfolio-badge badge-sales">Lançamento Esgotado</span>
+            </div>
+            <div class="portfolio-info">
+              <span class="portfolio-category">Estratégia</span>
+              <h3 class="portfolio-name">Lançamento Imobiliário Vista Alta</h3>
+              <p class="portfolio-desc">Tráfego pago focado em alta renda e posicionamento para condomínio de alto luxo com metas superadas.</p>
+              <a href="#contato" class="portfolio-link">
+                Conhecer Estratégia
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Case 3 -->
+          <article class="portfolio-card" data-category="design">
+            <div class="portfolio-media">
+              <div class="portfolio-visual" style="background: radial-gradient(circle at center, rgba(29,132,220,0.15) 0%, transparent 70%);"></div>
+              <span class="portfolio-badge badge-star">Case de Sucesso</span>
+            </div>
+            <div class="portfolio-info">
+              <span class="portfolio-category">Design</span>
+              <h3 class="portfolio-name">Rebranding FinTech Velo</h3>
+              <p class="portfolio-desc">Construção de nova identidade corporativa premium, agregando solidez e tecnologia ao posicionamento.</p>
+              <a href="#contato" class="portfolio-link">
+                Conhecer Estratégia
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Case 4 -->
+          <article class="portfolio-card" data-category="estrategia">
+            <div class="portfolio-media">
+              <div class="portfolio-visual" style="background: radial-gradient(circle at center, rgba(42,58,73,0.2) 0%, transparent 70%);"></div>
+              <span class="portfolio-badge badge-sales">ROI 8.5x</span>
+            </div>
+            <div class="portfolio-info">
+              <span class="portfolio-category">Estratégia</span>
+              <h3 class="portfolio-name">Black Friday ShopCo</h3>
+              <p class="portfolio-desc">Estruturação de funil completo e otimização de anúncios em tempo real para faturamento recorde.</p>
+              <a href="#contato" class="portfolio-link">
+                Conhecer Estratégia
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Case 5 -->
+          <article class="portfolio-card" data-category="videos">
+            <div class="portfolio-media">
+              <div class="portfolio-visual" style="background: radial-gradient(circle at center, rgba(29,132,220,0.3) 0%, transparent 70%);"></div>
+              <span class="portfolio-badge badge-viral">+5M Views</span>
+            </div>
+            <div class="portfolio-info">
+              <span class="portfolio-category">Vídeos</span>
+              <h3 class="portfolio-name">Série Creator Pro</h3>
+              <p class="portfolio-desc">Produção audiovisual institucional documental com técnicas de alta retenção no YouTube e Redes.</p>
+              <a href="#contato" class="portfolio-link">
+                Conhecer Estratégia
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Case 6 -->
+          <article class="portfolio-card" data-category="design">
+            <div class="portfolio-media">
+              <div class="portfolio-visual" style="background: radial-gradient(circle at center, rgba(42,58,73,0.15) 0%, transparent 70%);"></div>
+              <span class="portfolio-badge badge-star">Identidade Forte</span>
+            </div>
+            <div class="portfolio-info">
+              <span class="portfolio-category">Design</span>
+              <h3 class="portfolio-name">Brand Book Construtora Alfa</h3>
+              <p class="portfolio-desc">Criação de manual de marca, assets comerciais e site institucional de alto nível profissional.</p>
+              <a href="#contato" class="portfolio-link">
+                Conhecer Estratégia
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. SOCIAL PROOF & METRICS
+         ========================================================================== */ -->
+    <section class="metrics reveal" id="metricas">
+      <div class="container">
+        <div class="metrics-grid">
+          <!-- Metrica 1 -->
+          <div class="metric-item">
+            <div class="metric-number" data-target="150" data-prefix="R$ " data-suffix="M+">0</div>
+            <div class="metric-label">Gerados aos Clientes</div>
+          </div>
+
+          <!-- Metrica 2 -->
+          <div class="metric-item">
+            <div class="metric-number" data-target="250" data-prefix="" data-suffix="M+">0</div>
+            <div class="metric-label">Views Orgânicos</div>
+          </div>
+
+          <!-- Metrica 3 -->
+          <div class="metric-item">
+            <div class="metric-number" data-target="84" data-prefix="" data-suffix="%">0</div>
+            <div class="metric-label">Retenção Média</div>
+          </div>
+
+          <!-- Metrica 4 -->
+          <div class="metric-item">
+            <div class="metric-number" data-target="350" data-prefix="" data-suffix="+">0</div>
+            <div class="metric-label">Projetos Entregues</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. CONTACT / BRIEFING FORM
+         ========================================================================== */ -->
+    <section class="contact reveal" id="contato">
+      <div class="container">
+        <div class="contact-wrapper">
+          <div class="contact-info">
+            <span class="section-badge">Vamos Escalar</span>
+            <h2 class="section-title">Preencha o Briefing Rápido</h2>
+            <p>
+              Preencha o formulário ao lado para pré-qualificar sua empresa. Nossa equipe comercial analisará suas informações e entrará em contato via WhatsApp nas próximas 2 horas.
+            </p>
+
+            <div class="contact-methods">
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div class="contact-text">
+                  <h4>WhatsApp Comercial</h4>
+                  <p>+55 (11) 99999-8888</p>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="contact-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                </div>
+                <div class="contact-text">
+                  <h4>E-mail Corporativo</h4>
+                  <p>contato@b8audiovisual.com.br</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-container">
+            <form class="lead-form" id="leadForm" novalidate>
+              <div class="form-row">
+                <div class="input-group">
+                  <label class="input-label" for="fullname">Nome Completo</label>
+                  <input type="text" id="fullname" name="fullname" class="form-control" placeholder="Seu nome" required>
+                </div>
+                <div class="input-group">
+                  <label class="input-label" for="email">E-mail</label>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="Seu e-mail profissional" required>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="input-group">
+                  <label class="input-label" for="phone">WhatsApp</label>
+                  <input type="tel" id="phone" name="phone" class="form-control" placeholder="(00) 00000-0000" maxlength="15" required>
+                </div>
+                <div class="input-group">
+                  <label class="input-label" for="revenue">Faturamento Mensal</label>
+                  <select id="revenue" name="revenue" class="form-control" required>
+                    <option value="" disabled selected>Selecione...</option>
+                    <option value="under-10k">Até R$ 10.000 / mês</option>
+                    <option value="10k-50k">R$ 10.000 a R$ 50.000 / mês</option>
+                    <option value="50k-200k">R$ 50.000 a R$ 200.000 / mês</option>
+                    <option value="over-200k">Acima de R$ 200.000 / mês</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="input-group">
+                <label class="input-label" for="message">Qual o objetivo do seu negócio?</label>
+                <textarea id="message" name="message" class="form-control" placeholder="Descreva brevemente seu nicho e principais metas comerciais..." required></textarea>
+              </div>
+
+              <div class="submit-container">
+                <button type="submit" class="btn btn-primary submit-btn" id="submitBtn">
+                  <span class="btn-text">Enviar Briefing & Falar com Especialista</span>
+                  <div class="spinner"></div>
+                </button>
+              </div>
+            </form>
+
+            <!-- Success Overlay Screen -->
+            <div class="form-overlay" id="formOverlay">
+              <div class="success-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <h3 class="success-title">Briefing Enviado com Sucesso!</h3>
+              <p class="success-desc">
+                Nossa equipe comercial já recebeu suas respostas. Entraremos em contato nas próximas 2 horas.
+              </p>
+              <button class="btn btn-secondary" id="resetFormBtn">Enviar Outra Resposta</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       7. FOOTER
+       ========================================================================== */ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="#home" class="logo-link" aria-label="B8 Home">
+          <svg class="logo-svg" viewBox="0 0 160 130" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- 100% transparent composite path of the B8 Logo -->
+            <path fill-rule="evenodd" clip-rule="evenodd" d="
+              M 25,20 H 60 C 72,20 80,28 80,40 C 80,50 74,58 65,62 C 76,66 82,75 82,88 C 82,100 72,110 60,110 H 25 Z
+              M 82,40 C 82,28 92,20 104,20 C 116,20 126,28 126,40 C 126,50 120,58 111,62 C 120,66 126,75 126,88 C 126,100 116,110 104,110 C 92,110 82,100 82,88 Z
+              M 37,31 V 51 H 55 C 60,51 64,47 64,41 C 64,35 60,31 55,31 Z
+              M 37,75 V 95 H 57 C 62,95 66,91 66,85 C 66,79 62,75 57,75 Z
+              M 104,32 C 99,32 95,36 95,41 C 95,46 99,50 104,50 C 109,50 113,46 113,41 C 113,36 109,32 104,32 Z
+              M 104,76 C 99,76 95,80 95,85 C 95,90 99,94 104,94 C 109,94 113,90 113,85 C 113,80 109,76 104,76 Z
+            " fill="#F9F9F9"/>
+            <path d="M 80,53 Q 80,63 90,63 Q 80,63 80,73 Q 80,63 70,63 Q 80,63 80,53 Z" fill="#1D84DC"/>
+          </svg>
+          <div class="logo-text">B8<span>Audiovisual</span></div>
+        </a>
+
+        <div class="footer-socials">
+          <a href="#" class="social-icon" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"></path>
+              <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"></polygon>
+            </svg>
+          </a>
+          <a href="#" class="social-icon" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" radius="2"></circle>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-divider"></div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Agência B8 Audiovisual. Todos os direitos reservados.</p>
+        <div class="footer-links">
+          <a href="#" class="footer-link">Políticas de Privacidade</a>
+          <a href="#" class="footer-link">Termos de Uso</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       JAVASCRIPT
+       ========================================================================== */ -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      
+      // ==========================================================================
+      // NAVBAR FUNCTIONALITY (SCROLL & MOBILE TOGGLE)
+      // ==========================================================================
+      const header = document.getElementById('header');
+      const mobileToggle = document.getElementById('mobile-toggle');
+      const navMenu = document.getElementById('nav-menu');
+      const navLinks = document.querySelectorAll('.nav-link');
+
+      // Change header opacity/padding on scroll
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      });
+
+      // Mobile menu toggle
+      mobileToggle.addEventListener('click', () => {
+        const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
+        mobileToggle.setAttribute('aria-expanded', !isExpanded);
+        mobileToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+
+      // Close mobile menu on clicking any navigation link
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          mobileToggle.setAttribute('aria-expanded', 'false');
+          mobileToggle.classList.remove('active');
+          navMenu.classList.remove('active');
+        });
+      });
+
+      // ==========================================================================
+      // INTERACTIVE CARD HOVER (SPOTLIGHT GRADIENT EFFECT)
+      // ==========================================================================
+      const spotlightCards = document.querySelectorAll('[data-spotlight]');
+      
+      spotlightCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          
+          card.style.setProperty('--mouse-x', `${x}px`);
+          card.style.setProperty('--mouse-y', `${y}px`);
+        });
+      });
+
+      // ==========================================================================
+      // PORTFOLIO FILTER FUNCTIONALITY
+      // ==========================================================================
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      const portfolioCards = document.querySelectorAll('.portfolio-card');
+
+      filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          // Remove active class from other buttons
+          filterButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+
+          const filterValue = button.getAttribute('data-filter');
+
+          portfolioCards.forEach(card => {
+            const cardCategory = card.getAttribute('data-category');
+            
+            // Card transition exit
+            card.style.transition = 'opacity 0.25s ease, transform 0.25s ease';
+            card.style.opacity = '0';
+            card.style.transform = 'scale(0.95)';
+            
+            setTimeout(() => {
+              if (filterValue === 'all' || cardCategory === filterValue) {
+                card.classList.remove('hidden');
+                // Trigger reflow to restart animation correctly
+                void card.offsetWidth; 
+                
+                card.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'scale(1)';
+              } else {
+                card.classList.add('hidden');
+              }
+            }, 250);
+          });
+        });
+      });
+
+      // ==========================================================================
+      // ANIME ON SCROLL (INTERSECTION OBSERVER FOR FADE-IN REVEALS)
+      // ==========================================================================
+      const revealElements = document.querySelectorAll('.reveal');
+      
+      const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target); // Animates only once
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -50px 0px'
+      });
+
+      revealElements.forEach(element => {
+        revealObserver.observe(element);
+      });
+
+      // ==========================================================================
+      // METRICS COUNTER ANIMATION
+      // ==========================================================================
+      const metricNumbers = document.querySelectorAll('.metric-number');
+      
+      const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const element = entry.target;
+            const targetVal = parseInt(element.getAttribute('data-target'), 10);
+            const prefix = element.getAttribute('data-prefix');
+            const suffix = element.getAttribute('data-suffix');
+            
+            let count = 0;
+            const duration = 2000; // 2 seconds total animation
+            const steps = 60;
+            const stepVal = targetVal / steps;
+            const intervalTime = duration / steps;
+            
+            const interval = setInterval(() => {
+              count += stepVal;
+              if (count >= targetVal) {
+                element.textContent = prefix + targetVal + suffix;
+                clearInterval(interval);
+              } else {
+                element.textContent = prefix + Math.floor(count) + suffix;
+              }
+            }, intervalTime);
+            
+            observer.unobserve(element);
+          }
+        });
+      }, {
+        threshold: 0.5
+      });
+
+      metricNumbers.forEach(num => {
+        counterObserver.observe(num);
+      });
+
+      // ==========================================================================
+      // WHATSAPP PHONE MASK & FORM SUBMISSION HANDLING
+      // ==========================================================================
+      const phoneInput = document.getElementById('phone');
+      const leadForm = document.getElementById('leadForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const formOverlay = document.getElementById('formOverlay');
+      const resetFormBtn = document.getElementById('resetFormBtn');
+
+      // WhatsApp Input Mask (Format: (99) 99999-9999)
+      phoneInput.addEventListener('input', (e) => {
+        let value = e.target.value.replace(/\D/g, '');
+        if (value.length > 11) value = value.substring(0, 11);
+        
+        let formattedValue = '';
+        if (value.length > 0) {
+          formattedValue = '(' + value.substring(0, 2);
+        }
+        if (value.length > 2) {
+          formattedValue += ') ' + value.substring(2, 7);
+        }
+        if (value.length > 7) {
+          formattedValue += '-' + value.substring(7, 11);
+        }
+        
+        e.target.value = formattedValue;
+      });
+
+      // Real Submission Simulation
+      leadForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Custom simple validation styling check
+        let isFormValid = true;
+        const inputs = leadForm.querySelectorAll('input, select, textarea');
+        
+        inputs.forEach(input => {
+          if (!input.checkValidity()) {
+            isFormValid = false;
+            input.style.borderColor = '#eb5e28'; // red validation error color
+            
+            // Reset borders when corrected
+            input.addEventListener('focus', () => {
+              input.style.borderColor = '';
+            }, { once: true });
+          }
+        });
+
+        if (!isFormValid) return;
+
+        // Visual loading feedback
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
+
+        // Simulate API network latency
+        setTimeout(() => {
+          submitBtn.classList.remove('loading');
+          submitBtn.disabled = false;
+          
+          // Show Success Toast/Screen
+          formOverlay.classList.add('active');
+        }, 1800);
+      });
+
+      // Reset Form State
+      resetFormBtn.addEventListener('click', () => {
+        leadForm.reset();
+        formOverlay.classList.remove('active');
+      });
+
+    });
+  </script>
+</body>
+</html>
