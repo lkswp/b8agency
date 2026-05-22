@@ -3,6 +3,7 @@
 import { motion, Variants, useReducedMotion } from "framer-motion";
 import { X, ArrowUpRight } from "lucide-react";
 import BriefingOverlayForm from "./BriefingOverlayForm";
+import InstagramFeed from "./InstagramFeed";
 
 interface InteractiveOverlayProps {
   isOpen: boolean;
@@ -161,6 +162,11 @@ export default function InteractiveOverlay({ isOpen, onClose }: InteractiveOverl
           </motion.div>
         </div>
       </div>
+
+      {/* Instagram Feed Integration */}
+      <motion.div variants={itemVariants} className="w-full transform-gpu">
+        <InstagramFeed />
+      </motion.div>
 
       {/* Footer Info inside Overlay */}
       <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] text-zinc-600 font-medium font-mono w-full border-t border-zinc-950 pt-6 transform-gpu">

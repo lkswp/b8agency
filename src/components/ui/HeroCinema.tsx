@@ -183,14 +183,29 @@ export default function HeroCinema({ onEnterUniverse }: HeroCinemaProps) {
       {/* Bottom Button Row */}
       <motion.div 
         variants={buttonAreaVariants}
-        className="relative z-10 flex flex-col items-center gap-4 transform-gpu"
+        className="relative z-10 flex flex-col items-center gap-4 transform-gpu w-full"
       >
-        <MagneticButton onClick={onEnterUniverse}>
-          DAR PLAY NO BRIEFING / FALAR COM O VIDEOMAKER
-        </MagneticButton>
-        <span className="font-mono text-[8px] text-zinc-600 font-bold uppercase tracking-[0.3em] mt-2 animate-pulse">
-          Click to play
-        </span>
+        <div className="flex flex-col items-center gap-2">
+          <MagneticButton onClick={onEnterUniverse}>
+            DAR PLAY NO BRIEFING / FALAR COM O VIDEOMAKER
+          </MagneticButton>
+          <span className="font-mono text-[8px] text-zinc-600 font-bold uppercase tracking-[0.3em] mt-2 animate-pulse">
+            Click to play
+          </span>
+        </div>
+
+        {/* Subtle Footer inside Hero */}
+        <div className="w-full flex flex-col sm:flex-row justify-between items-center text-[9px] text-zinc-600 font-mono tracking-[0.2em] mt-10 border-t border-zinc-900/30 pt-4 gap-2 sm:gap-0">
+          <span>&copy; {new Date().getFullYear()} B8 STUDIO // ALL RIGHTS RESERVED</span>
+          <a
+            href="https://instagram.com/b8agencia"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:text-white transition-colors duration-300 flex items-center gap-1.5 font-bold"
+          >
+            INSTAGRAM @B8AGENCIA <span className="text-[7px]">↗</span>
+          </a>
+        </div>
       </motion.div>
     </motion.section>
   );
